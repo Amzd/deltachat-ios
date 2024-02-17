@@ -21,10 +21,6 @@ class ChatViewController: UITableViewController, UITableViewDropDelegate {
     private var wasInputBarFirstResponder = false
     private var reactionMessageId: Int?
 
-    private lazy var isGroupChat: Bool = {
-        return dcContext.getChat(chatId: chatId).isGroup
-    }()
-
     private lazy var draft: DraftModel = {
         return DraftModel(dcContext: dcContext, chatId: chatId)
     }()
@@ -658,11 +654,14 @@ class ChatViewController: UITableViewController, UITableViewDropDelegate {
             cell = tableView.dequeueReusableCell(withIdentifier: "text", for: indexPath) as? TextMessageCell ?? TextMessageCell()
         }
 
-        var showAvatar = isGroupChat && !message.isFromCurrentSender
-        var showName = isGroupChat
-        if message.overrideSenderName != nil {
+        let showAvatar: Bool
+        let showName: Bool
+        if message.overrideSenderName != nil || dcChat.isSelfTalk {
             showAvatar = !message.isFromCurrentSender
             showName = true
+        } else {
+            showAvatar = dcChat.isGroup && !message.isFromCurrentSender
+            showName = dcChat.isGroup
         }
 
         cell.baseDelegate = self
