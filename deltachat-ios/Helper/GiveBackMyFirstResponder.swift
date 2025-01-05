@@ -1,4 +1,5 @@
 import UIKit
+import QuickLook
 
 /// https://gist.github.com/Amzd/223979ef5a06d98ef17d2d78dbd96e22
 extension UIViewController {
@@ -29,6 +30,14 @@ extension UIViewController {
         } else {
             present(documentPicker as UIViewController, animated: animated, completion: completion)
         }
+    }
+
+    /// QLPreviewController causes issues when dismissed using the swipe gesture if there was a first responder active when it was presented.
+    /// Issues range from freezing the previous first responder to crashing the app.
+    public func present(_ previewController: QLPreviewController, animated: Bool, completion: (() -> Void)? = nil) {
+        // QLPreviewController can not be used as child because it would not do its custom transitions
+        let vc = GiveBackMyFirstResponder.asChild(of: previewController)
+        present(vc, animated: animated, completion: completion)
     }
 
     /// In iOS 16 and below and iOS 18 the UIImagePickerController does not give back the first responder when search was used.
@@ -63,6 +72,17 @@ private class GiveBackMyFirstResponder<VC: UIViewController>: FirstResponderRetu
         culprit.view.frame = view.frame
         view.addSubview(culprit.view)
         culprit.didMove(toParent: self)
+    }
+
+    /// Returns a type erased version of the culprit view controller with a FirstResponderReturningViewController as child.
+    /// The type erasure prevents infinite recursion in UIViewController.present.
+    static func asChild(of culprit: VC) -> UIViewController {
+        let vc = FirstResponderReturningViewController()
+        culprit.addChild(vc)
+        culprit.view.addSubview(vc.view)
+        vc.view.isUserInteractionEnabled = false
+        vc.didMove(toParent: culprit)
+        return culprit
     }
 }
 
