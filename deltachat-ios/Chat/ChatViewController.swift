@@ -963,7 +963,11 @@ class ChatViewController: UITableViewController, UITableViewDropDelegate {
     }
 
     private func canReplyPrivately(to message: DcMsg) -> Bool {
-        return dcChat.isGroup && !message.isFromCurrentSender
+        return message.id != DC_MSG_ID_MARKER1 && message.id != DC_MSG_ID_DAYMARKER && !message.isInfo && message.type != DC_MSG_VIDEOCHAT_INVITATION && dcChat.isGroup && !message.isFromCurrentSender
+    }
+
+    private func canForward(message: DcMsg) -> Bool {
+        return message.id != DC_MSG_ID_MARKER1 && message.id != DC_MSG_ID_DAYMARKER && !message.isInfo && message.type != DC_MSG_VIDEOCHAT_INVITATION
     }
 
     /// Verifies if the last message cell is fully visible
@@ -1940,25 +1944,26 @@ extension ChatViewController {
                         children.append(UIMenu(title: String.localized("react"), image: UIImage(systemName: "face.smiling"), children: items))
                     }
                     children.append(
-                        UIAction.menuAction(localizationKey: "notify_reply_button", systemImageName: "arrowshape.turn.up.left.fill", indexPath: indexPath, action: { self.reply(at: $0 ) })
+                        UIAction.menuAction(localizationKey: "notify_reply_button", systemImageName: "arrowshape.turn.up.left.fill", indexPath: indexPath, action: reply)
                     )
                 }
 
                 if canReplyPrivately(to: message) {
                     children.append(
-                        UIAction.menuAction(localizationKey: "reply_privately", systemImageName: "arrowshape.turn.up.left", indexPath: indexPath, action: { self.replyPrivatelyToMessage(at: $0 ) })
+                        UIAction.menuAction(localizationKey: "reply_privately", systemImageName: "arrowshape.turn.up.left", indexPath: indexPath, action: replyPrivatelyToMessage)
                     )
                 }
 
-                let image: UIImage?
-                if #available(iOS 16.0, *) {
-                    image = UIImage(systemName: "arrowshape.forward.fill")
-                } else {
-                    image = UIImage(named: "ic_forward_white_36pt")
+                if canForward(message: message) {
+                    let image = if #available(iOS 16.0, *) {
+                        UIImage(systemName: "arrowshape.forward.fill")
+                    } else {
+                        UIImage(named: "ic_forward_white_36pt")
+                    }
+                    children.append(
+                        UIAction.menuAction(localizationKey: "forward", image: image, indexPath: indexPath, action: forward)
+                    )
                 }
-                children.append(
-                    UIAction.menuAction(localizationKey: "forward", image: image, indexPath: indexPath, action: forward)
-                )
 
                 if let link = isLinkTapped(indexPath: indexPath, point: point) {
                     children.append(
