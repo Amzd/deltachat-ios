@@ -229,6 +229,7 @@
 		D86DF20C2D30318B00141B3E /* WebxdcStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86DF20B2D30318B00141B3E /* WebxdcStoreViewController.swift */; };
 		D878C4FD2CF72AA0009AF551 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D878C4FC2CF72AA0009AF551 /* WidgetKit.framework */; };
 		D878C4FF2CF72AA0009AF551 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D878C4FE2CF72AA0009AF551 /* SwiftUI.framework */; };
+		DCA0000D2CF72AA1009AF551 /* DcAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = DCA000022CF72AA0009AF551 /* DcAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D878C50C2CF72AA1009AF551 /* DcWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D878C4FB2CF72AA0009AF551 /* DcWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D87C64672D01E4EF004472D6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3060119E22DDE24000C1CE6F /* Localizable.strings */; };
 		D89C456D2D0AF6A8005B1491 /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89C456C2D0AF6A8005B1491 /* WidgetEntry.swift */; };
@@ -272,6 +273,13 @@
 			remoteGlobalIDString = B2D0E4912B93A4B200791949;
 			remoteInfo = DcNotificationService;
 		};
+		DCA0000A2CF72AA1009AF551 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A9FB1381FB061E2001FEA36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCA000012CF72AA0009AF551;
+			remoteInfo = DcAppClip;
+		};
 		D878C50A2CF72AA1009AF551 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7A9FB1381FB061E2001FEA36 /* Project object */;
@@ -291,6 +299,17 @@
 				304219D3243F588500516852 /* DcCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCA0000C2CF72AA1009AF551 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				DCA0000D2CF72AA1009AF551 /* DcAppClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		30E8F21B2447285600CE2C90 /* Embed Foundation Extensions */ = {
@@ -650,6 +669,7 @@
 		D85DF9772C4A96CB00A01408 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		D85DF97F2C5250E200A01408 /* ProgressAlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressAlertHandler.swift; sourceTree = "<group>"; };
 		D86DF20B2D30318B00141B3E /* WebxdcStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebxdcStoreViewController.swift; sourceTree = "<group>"; };
+		DCA000022CF72AA0009AF551 /* DcAppClip.app */ = {isa = PBXFileReference; explicitFileType = "wrapper.application"; includeInIndex = 0; path = DcAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D878C4FB2CF72AA0009AF551 /* DcWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DcWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D878C4FC2CF72AA0009AF551 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		D878C4FE2CF72AA0009AF551 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -670,6 +690,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DCA0000E2CF72AA1009AF551 /* Exceptions for "DcAppClip" folder in "DcAppClip" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DcAppClip.entitlements,
+				Info.plist,
+			);
+			target = DCA000012CF72AA0009AF551 /* DcAppClip */;
+		};
 		D81A6A002D16EDB10023749C /* Exceptions for "DcWidget" folder in "DcWidget" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -683,6 +711,14 @@
 		643B44782E0C2BD900AEE026 /* DcTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DcTests;
+			sourceTree = "<group>";
+		};
+		DCA000062CF72AA0009AF551 /* DcAppClip */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DCA0000E2CF72AA1009AF551 /* Exceptions for "DcAppClip" folder in "DcAppClip" target */,
+			);
+			path = DcAppClip;
 			sourceTree = "<group>";
 		};
 		D878C5002CF72AA0009AF551 /* DcWidget */ = {
@@ -934,6 +970,7 @@
 				7A9FB1421FB061E2001FEA36 /* deltachat-ios */,
 				30E8F2112447285600CE2C90 /* DcShare */,
 				B2D0E4932B93A4B200791949 /* DcNotificationService */,
+				DCA000062CF72AA0009AF551 /* DcAppClip */,
 				D878C5002CF72AA0009AF551 /* DcWidget */,
 				643B44782E0C2BD900AEE026 /* DcTests */,
 				7A9FB1411FB061E2001FEA36 /* Products */,
@@ -951,6 +988,7 @@
 				7A9FB1401FB061E2001FEA36 /* deltachat-ios.app */,
 				30E8F2102447285600CE2C90 /* Delta Chat.appex */,
 				B2D0E4922B93A4B200791949 /* DcNotificationService.appex */,
+				DCA000022CF72AA0009AF551 /* DcAppClip.app */,
 				D878C4FB2CF72AA0009AF551 /* DcWidget.appex */,
 				643B44772E0C2BD800AEE026 /* DcTests.xctest */,
 			);
@@ -1334,6 +1372,7 @@
 				7837B64621E5532B00CDE126 /* ShellScript */,
 				304219D4243F588600516852 /* Embed Frameworks */,
 				30E8F21B2447285600CE2C90 /* Embed Foundation Extensions */,
+				DCA0000C2CF72AA1009AF551 /* Embed App Clips */,
 				4B4E98320BAB08A6811633E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -1342,6 +1381,7 @@
 				30E8F2192447285600CE2C90 /* PBXTargetDependency */,
 				B2D0E4982B93A4B200791949 /* PBXTargetDependency */,
 				D878C50B2CF72AA1009AF551 /* PBXTargetDependency */,
+				DCA0000B2CF72AA1009AF551 /* PBXTargetDependency */,
 			);
 			name = "deltachat-ios";
 			productName = "deltachat-ios";
@@ -1364,6 +1404,26 @@
 			productName = DcNotificationService;
 			productReference = B2D0E4922B93A4B200791949 /* DcNotificationService.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		DCA000012CF72AA0009AF551 /* DcAppClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCA000092CF72AA1009AF551 /* Build configuration list for PBXNativeTarget "DcAppClip" */;
+			buildPhases = (
+				DCA000032CF72AA0009AF551 /* Sources */,
+				DCA000042CF72AA0009AF551 /* Frameworks */,
+				DCA000052CF72AA0009AF551 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DCA000062CF72AA0009AF551 /* DcAppClip */,
+			);
+			name = DcAppClip;
+			productName = DcAppClip;
+			productReference = DCA000022CF72AA0009AF551 /* DcAppClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
 		};
 		D878C4FA2CF72AA0009AF551 /* DcWidget */ = {
 			isa = PBXNativeTarget;
@@ -1430,6 +1490,9 @@
 					D878C4FA2CF72AA0009AF551 = {
 						CreatedOnToolsVersion = 16.1;
 					};
+				DCA000012CF72AA0009AF551 = {
+					CreatedOnToolsVersion = 16.4;
+				};
 				};
 			};
 			buildConfigurationList = 7A9FB13B1FB061E2001FEA36 /* Build configuration list for PBXProject "deltachat-ios" */;
@@ -1494,6 +1557,7 @@
 				30E8F20F2447285600CE2C90 /* DcShare */,
 				B2D0E4912B93A4B200791949 /* DcNotificationService */,
 				D878C4FA2CF72AA0009AF551 /* DcWidget */,
+				DCA000012CF72AA0009AF551 /* DcAppClip */,
 				643B44762E0C2BD800AEE026 /* DcTests */,
 			);
 		};
@@ -1896,6 +1960,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCA000032CF72AA0009AF551 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCA000042CF72AA0009AF551 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCA000052CF72AA0009AF551 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D878C4F72CF72AA0009AF551 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1924,6 +2009,11 @@
 			isa = PBXTargetDependency;
 			target = B2D0E4912B93A4B200791949 /* DcNotificationService */;
 			targetProxy = B2D0E4972B93A4B200791949 /* PBXContainerItemProxy */;
+		};
+		DCA0000B2CF72AA1009AF551 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCA000012CF72AA0009AF551 /* DcAppClip */;
+			targetProxy = DCA0000A2CF72AA1009AF551 /* PBXContainerItemProxy */;
 		};
 		D878C50B2CF72AA1009AF551 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2580,6 +2670,74 @@
 			};
 			name = Release;
 		};
+		DCA000072CF72AA1009AF551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = DcAppClip/DcAppClip.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 167;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DcAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Delta Chat";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright \U00a9 2024 merlinux GmbH. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.49.0;
+				MTL_FAST_MATH = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "chat.delta.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DCA000082CF72AA1009AF551 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = DcAppClip/DcAppClip.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 167;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DcAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Delta Chat";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright \U00a9 2024 merlinux GmbH. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.49.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "chat.delta.Clip";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D878C50D2CF72AA1009AF551 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2694,6 +2852,15 @@
 			buildConfigurations = (
 				B2D0E49A2B93A4B200791949 /* Debug */,
 				B2D0E49B2B93A4B200791949 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCA000092CF72AA1009AF551 /* Build configuration list for PBXNativeTarget "DcAppClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCA000072CF72AA1009AF551 /* Debug */,
+				DCA000082CF72AA1009AF551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
