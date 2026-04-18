@@ -190,8 +190,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             prepopulateWidget()
         }
 
+        handleAppClipInviteLink()
+
         launchOptions = nil
         appFullyInitialized = true
+    }
+
+    // Reads an invite link stored by the DcAppClip and forwards it to the QR handler,
+    // emulating the deferred deep link behaviour of an App Clip.
+    private func handleAppClipInviteLink() {
+        let appGroupID = "group.chat.delta.ios"
+        let inviteLinkKey = "appClipInviteLink"
+        guard let sharedDefaults = UserDefaults(suiteName: appGroupID),
+              let inviteLink = sharedDefaults.string(forKey: inviteLinkKey) else { return }
+        sharedDefaults.removeObject(forKey: inviteLinkKey)
+        appCoordinator.handleQRCode(inviteLink)
     }
 
     func application(_ application: UIApplication,
