@@ -1,0 +1,1 @@
+../../../../../../../../deltachat-ios/Chat/Views/Cells/ContactCardCell.swift

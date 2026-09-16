@@ -1,0 +1,1 @@
+../../../../../../deltachat-ios/ViewModel/ContactCellViewModel.swift

@@ -1,6 +1,10 @@
 import Foundation
 import UIKit
 import UniformTypeIdentifiers
+#if SWIFT_PACKAGE
+import CDeltaChat
+#endif
+
 
 public var shareExtensionDirectory = FileManager.default
     .containerURL(forSecurityApplicationGroupIdentifier: DatabaseHelper.applicationGroupIdentifier)!

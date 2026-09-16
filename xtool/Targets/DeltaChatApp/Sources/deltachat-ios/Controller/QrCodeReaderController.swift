@@ -1,0 +1,1 @@
+../../../../../../deltachat-ios/Controller/QrCodeReaderController.swift

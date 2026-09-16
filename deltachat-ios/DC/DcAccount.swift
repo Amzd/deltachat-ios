@@ -1,4 +1,8 @@
 import Foundation
+#if SWIFT_PACKAGE
+import CDeltaChat
+#endif
+
 
 struct JsonrpcError: Decodable {
     let message: String

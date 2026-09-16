@@ -1,0 +1,1 @@
+../../deltachat-ios/libraries/deltachat-core-rust/deltachat-ffi/deltachat.h

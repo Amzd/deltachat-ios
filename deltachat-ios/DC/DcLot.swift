@@ -1,4 +1,8 @@
 import Foundation
+#if SWIFT_PACKAGE
+import CDeltaChat
+#endif
+
 
 /// An object containing a set of values.
 ///

@@ -1,0 +1,1 @@
+../../../../../../deltachat-ios/View/AvatarSelectionCell.swift

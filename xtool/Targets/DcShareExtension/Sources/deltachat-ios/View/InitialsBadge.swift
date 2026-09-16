@@ -1,0 +1,1 @@
+../../../../../../deltachat-ios/View/InitialsBadge.swift

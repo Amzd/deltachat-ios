@@ -1,4 +1,8 @@
 import Foundation
+#if SWIFT_PACKAGE
+import CDeltaChat
+#endif
+
 
 /// Opaque object describing a single event.
 ///

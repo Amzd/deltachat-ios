@@ -1,0 +1,25 @@
+version: 1
+bundleID: chat.delta
+product: DeltaChatApp
+infoPath: Config/DeltaChatApp/Info.plist
+entitlementsPath: Config/DeltaChatApp/deltachat-ios.entitlements
+iconPath: Support/AppIcon.png
+resources:
+  - Config/Shared/PrivacyInfo.xcprivacy
+extensions:
+  - product: DcShare
+    bundleID: chat.delta.DcShare
+    infoPath: Config/DcShare/Info.plist
+    entitlementsPath: Config/DcShare/DcShare.entitlements
+    resources:
+      - Config/Shared/PrivacyInfo.xcprivacy
+  - product: DcNotificationService
+    bundleID: chat.delta.DcNotificationService
+    infoPath: Config/DcNotificationService/Info.plist
+    entitlementsPath: Config/DcNotificationService/DcNotificationService.entitlements
+    resources:
+      - Config/Shared/PrivacyInfo.xcprivacy
+  - product: DcWidget
+    bundleID: chat.delta.DcWidget
+    infoPath: Config/DcWidget/Info.plist
+    entitlementsPath: Config/DeltaChatApp/deltachat-ios.entitlements

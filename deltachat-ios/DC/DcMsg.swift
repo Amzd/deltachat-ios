@@ -1,4 +1,8 @@
 import UIKit
+#if SWIFT_PACKAGE
+import CDeltaChat
+#endif
+
 
 /// An object representing a single message in memory.
 ///

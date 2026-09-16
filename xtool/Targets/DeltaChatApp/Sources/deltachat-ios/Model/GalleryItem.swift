@@ -1,0 +1,1 @@
+../../../../../../deltachat-ios/Model/GalleryItem.swift

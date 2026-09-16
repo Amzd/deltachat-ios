@@ -1,4 +1,8 @@
 import UserNotifications
+#if SWIFT_PACKAGE
+import CDeltaChat
+#endif
+
 
 public extension UNMutableNotificationContent {
     /// The limit for expanded notifications on iOS 14+.

@@ -3,6 +3,10 @@ import UIKit
 import MobileCoreServices
 import AVFoundation
 import Intents
+#if SWIFT_PACKAGE
+import CDeltaChat
+#endif
+
 
 public struct DcUtils {
 

@@ -1,5 +1,9 @@
 import UIKit
 import UserNotifications
+#if SWIFT_PACKAGE
+import CDeltaChat
+#endif
+
 
 public enum Event {
     // Messages

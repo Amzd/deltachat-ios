@@ -1,0 +1,1 @@
+../../../../../../deltachat-ios/Coordinator/AppCoordinator.swift
