@@ -7,4 +7,4 @@ cd "$ROOT"
 git submodule update --init --recursive -- deltachat-ios/libraries/deltachat-core-rust
 
 cd "$ROOT/xtool"
-./sync-xcode-layout.rb
+ruby ./sync-xcode-layout.rb

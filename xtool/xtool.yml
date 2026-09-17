@@ -22,4 +22,4 @@ extensions:
   - product: DcWidget
     bundleID: chat.delta.DcWidget
     infoPath: Config/DcWidget/Info.plist
-    entitlementsPath: Config/DeltaChatApp/deltachat-ios.entitlements
+    entitlementsPath: Config/DcWidget/DcWidget.entitlements

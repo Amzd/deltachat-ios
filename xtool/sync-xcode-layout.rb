@@ -25,6 +25,7 @@ CONFIG_LINKS = {
   'DcNotificationService/Info.plist' => 'DcNotificationService/Info.plist',
   'DcNotificationService/DcNotificationService.entitlements' => 'DcNotificationService/DcNotificationService.entitlements',
   'DcWidget/Info.plist' => 'DcWidget/Info.plist',
+  'DcWidget/DcWidget.entitlements' => 'deltachat-ios/deltachat-ios.entitlements',
   'Shared/PrivacyInfo.xcprivacy' => 'PrivacyInfo.xcprivacy'
 }.freeze
 

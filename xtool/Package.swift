@@ -4,6 +4,7 @@ import Foundation
 import PackageDescription
 
 let packageRoot = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
+let supportDirectory = packageRoot.appendingPathComponent("Support").path
 
 func resourcesDirectoryContents(targetPath: String, directory: String) -> [String] {
     let url = packageRoot.appendingPathComponent(targetPath).appendingPathComponent(directory)
@@ -78,7 +79,7 @@ let package = Package(
             path: "Targets/CDeltaChat",
             publicHeadersPath: "include",
             linkerSettings: [
-                .unsafeFlags(["-L", "Support", "-ldeltachat"]),
+                .unsafeFlags(["-L", supportDirectory, "-ldeltachat"]),
             ]
         ),
         .target(
