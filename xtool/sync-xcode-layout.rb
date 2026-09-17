@@ -133,7 +133,7 @@ TARGETS.each do |xcode_target_name, swiftpm_target_name|
     .uniq
     .sort_by { |path| path.each_filename.count }
     .each do |source|
-      next if linked_resource_sources.any? { |other| other != source && source.to_s.start_with?("#{other}/") }
+      next if linked_resource_sources.any? { |other| other != source && source.to_s.start_with?(other.to_s + File::SEPARATOR) }
 
       relative = project_relative(source)
       symlink(source, resources_root.join(relative))
