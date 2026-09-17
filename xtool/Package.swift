@@ -48,6 +48,7 @@ let dcNotificationServiceResources =
 
 let dcWidgetResources =
     processedIfExists(targetPath: "Targets/DcWidgetExtension", path: "Resources/DcWidget/Assets.xcassets") +
+    processedIfExists(targetPath: "Targets/DcWidgetExtension", path: "Resources/deltachat-ios/Assets.xcassets") +
     localizedResources(targetPath: "Targets/DcWidgetExtension", directory: "Resources/deltachat-ios")
 
 let package = Package(

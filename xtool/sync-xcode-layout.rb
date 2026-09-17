@@ -60,10 +60,10 @@ reset_dir(XTOOL_DIR.join('Support'))
 
 cdelta = XTOOL_DIR.join('Targets', 'CDeltaChat')
 FileUtils.mkdir_p(cdelta.join('include'))
+symlink(ROOT.join('deltachat-ios', 'libraries', 'deltachat-core-rust', 'deltachat-ffi', 'deltachat.h'), XTOOL_DIR.join('Support', 'deltachat.h'))
 symlink(ROOT.join('DcCore', 'DcCore', 'DC', 'wrapper.c'), cdelta.join('wrapper.c'))
 symlink(ROOT.join('DcCore', 'DcCore', 'DC', 'wrapper.h'), cdelta.join('include', 'wrapper.h'))
 symlink(XTOOL_DIR.join('Support', 'deltachat.h'), cdelta.join('include', 'deltachat.h'))
-symlink(ROOT.join('deltachat-ios', 'libraries', 'deltachat-core-rust', 'deltachat-ffi', 'deltachat.h'), XTOOL_DIR.join('Support', 'deltachat.h'))
 
 CONFIG_LINKS.each do |destination, source|
   symlink(ROOT.join(source).expand_path, XTOOL_DIR.join('Config', destination))
