@@ -1,1 +1,0 @@
-../../../../../../deltachat-ios/ViewModel/ChatListViewModel.swift

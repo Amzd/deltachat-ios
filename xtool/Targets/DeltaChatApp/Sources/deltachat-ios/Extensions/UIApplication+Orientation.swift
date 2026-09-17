@@ -1,1 +1,0 @@
-../../../../../../deltachat-ios/Extensions/UIApplication+Orientation.swift

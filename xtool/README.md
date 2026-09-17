@@ -2,14 +2,14 @@
 
 Run xtool commands from `/home/runner/work/deltachat-ios/deltachat-ios/xtool`.
 
-## Refresh the mirrored target layout
+## Create the generated link tree
 
 ```bash
 cd /home/runner/work/deltachat-ios/deltachat-ios/xtool
-./sync-xcode-layout.rb
+./setup.sh
 ```
 
-This recreates the symlinked SwiftPM target layout from `/home/runner/work/deltachat-ios/deltachat-ios/deltachat-ios.xcodeproj/project.pbxproj` and keeps the existing Xcode project as the source of truth for file membership.
+This initializes the core submodule if needed and recreates the generated symlinked SwiftPM layout from `/home/runner/work/deltachat-ios/deltachat-ios/deltachat-ios.xcodeproj/project.pbxproj`. The generated `Config`, `Support`, and `Targets` trees are intentionally untracked, and the Xcode project stays the source of truth for file membership.
 
 ## Build the Rust core first
 
@@ -24,9 +24,11 @@ cd /home/runner/work/deltachat-ios/deltachat-ios/scripts
 
 ```bash
 cd /home/runner/work/deltachat-ios/deltachat-ios/xtool
+./setup.sh
 xtool dev build
 ```
 
 Notes:
 - App Clip is intentionally not part of the xtool package.
-- The xtool package mirrors the current multi-target Xcode source membership with per-target symlinks, so shared files can stay shared without changing the Xcode project.
+- The xtool package mirrors the current multi-target Xcode source membership with generated per-target symlinks, so shared files can stay shared without changing the Xcode project.
+- Run `./setup.sh` again after Xcode target membership or resource membership changes.

@@ -1,1 +1,0 @@
-../../../../../../deltachat-ios/KeyboardManager/KeyboardManager.swift

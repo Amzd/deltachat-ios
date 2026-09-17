@@ -1,1 +1,0 @@
-../../../../../../deltachat-ios/Helper/AvatarHelper.swift

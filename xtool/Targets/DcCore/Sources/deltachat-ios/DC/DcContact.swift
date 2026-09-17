@@ -1,1 +1,0 @@
-../../../../../../deltachat-ios/DC/DcContact.swift

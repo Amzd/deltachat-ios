@@ -1,1 +1,0 @@
-../../../../../../../deltachat-ios/Chat/Apps/WebxdcStoreViewController.swift

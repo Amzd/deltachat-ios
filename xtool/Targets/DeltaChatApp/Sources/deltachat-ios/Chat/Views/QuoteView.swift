@@ -1,1 +1,0 @@
-../../../../../../../deltachat-ios/Chat/Views/QuoteView.swift

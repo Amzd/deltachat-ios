@@ -1,1 +1,0 @@
-../../../../../../deltachat-ios/Controller/NewChatViewController.swift

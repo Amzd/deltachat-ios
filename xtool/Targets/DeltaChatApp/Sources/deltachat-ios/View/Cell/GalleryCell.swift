@@ -1,1 +1,0 @@
-../../../../../../../deltachat-ios/View/Cell/GalleryCell.swift

@@ -1,1 +1,0 @@
-../../../../../../deltachat-ios/View/MessageCounter.swift

@@ -1,1 +1,0 @@
-../../../../../../deltachat-ios/Extensions/NSItemProvider+Extensions.swift

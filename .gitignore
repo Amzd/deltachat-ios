@@ -45,3 +45,6 @@ deltachat-ios/libraries/libdeltachat.a
 xtool/.build
 xtool/.swiftpm
 xtool/xtool
+xtool/Config
+xtool/Support
+xtool/Targets
