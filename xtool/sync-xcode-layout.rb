@@ -78,9 +78,10 @@ raise 'Missing target DcCore' unless core_target
 
 core_sources_root = XTOOL_DIR.join('Targets', 'DcCore', 'Sources')
 FileUtils.mkdir_p(core_sources_root)
+wrapper_source = ROOT.join('DcCore', 'DcCore', 'DC', 'wrapper.c').expand_path
 core_target.source_build_phase.files_references.each do |file_ref|
   source = file_ref.real_path.expand_path
-  next if %w[.c .h].include?(source.extname)
+  next if source == wrapper_source
 
   relative = project_relative(source)
   symlink(source, core_sources_root.join(relative))

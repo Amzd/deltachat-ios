@@ -1,29 +1,29 @@
 # xtool setup
 
-Run xtool commands from `/home/runner/work/deltachat-ios/deltachat-ios/xtool`.
+Run xtool commands from the repository `xtool/` directory.
 
 ## Create the generated link tree
 
 ```bash
-cd /home/runner/work/deltachat-ios/deltachat-ios/xtool
+cd xtool
 ./setup.sh
 ```
 
-This initializes the core submodule if needed and recreates the generated symlinked SwiftPM layout from `/home/runner/work/deltachat-ios/deltachat-ios/deltachat-ios.xcodeproj/project.pbxproj`. The generated `Config`, `Support`, and `Targets` trees are intentionally untracked, and the Xcode project stays the source of truth for file membership.
+This initializes the core submodule if needed and recreates the generated symlinked SwiftPM layout from `deltachat-ios.xcodeproj/project.pbxproj`. The generated `Config`, `Support`, and `Targets` trees are intentionally untracked, and the Xcode project stays the source of truth for file membership.
 
 ## Build the Rust core first
 
 ```bash
-cd /home/runner/work/deltachat-ios/deltachat-ios/scripts
+cd scripts
 ./build-core.sh
 ```
 
-`xtool` links against `/home/runner/work/deltachat-ios/deltachat-ios/deltachat-ios/libraries/libdeltachat.a`, so that archive must exist before building from `xtool`.
+`xtool` links against `deltachat-ios/libraries/libdeltachat.a`, so that archive must exist before building from `xtool`.
 
 ## Build with xtool
 
 ```bash
-cd /home/runner/work/deltachat-ios/deltachat-ios/xtool
+cd xtool
 ./setup.sh
 xtool dev build
 ```
